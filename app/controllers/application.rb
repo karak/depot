@@ -4,6 +4,9 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
+  #use session
+  session :session_key => '_depot_session_id'
+  
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery :secret => 'f337e674500058432d9c5f4ad908d27d'
