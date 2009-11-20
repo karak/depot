@@ -14,7 +14,6 @@ class StoreController < ApplicationController
     else
       @cart = find_cart
       @cart.add_product(product)
-      redirect_to_index
     end
   end
   
