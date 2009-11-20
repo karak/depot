@@ -9,17 +9,26 @@ class StoreController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       msg = "no such a product: #{params[:id]}"
       logger.error(msg)
-      flash[:notice] = msg
-      redirect_to :action => :index
+      redirect_to_index msg
     else
       @cart = find_cart
       @cart.add_product(product)
     end
   end
   
+  def empty_cart
+    session[:cart] = nil
+    redirect_to_index 'cart is empty now'
+  end
+  
   private
   def find_cart
     session[:cart] ||= Cart.new
+  end
+  
+  def redirect_to_index(msg)
+    flash[:notice] = msg
+    redirect_to :action => :index
   end
 
 end

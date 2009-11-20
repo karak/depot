@@ -14,4 +14,8 @@ class Cart
     end
   end
   
+  def total_price
+    @items.sum(&:price)
+  end
+  
 end
