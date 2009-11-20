@@ -4,6 +4,6 @@
     <img src="<%= product.image_url %>" />
     <h3><%= h product.title %></h3>
     <%= product.description %>
-    <span class="price"><%= product.price %></span>
+    <span class="price"><%= number_to_currency(product.price) %></span>
   </div>
 <% end -%>
