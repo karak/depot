@@ -1,3 +1,4 @@
+
 <div class="cart-title">Pragmatic Cart</div>
 <table>
   <% for item in @cart.items -%>
@@ -14,3 +15,5 @@
 </table>
 
 <%= button_to 'empty cart', :action => :empty_cart %>
+
+<%=link_to 'continue shopping', :action => 'index' %>
