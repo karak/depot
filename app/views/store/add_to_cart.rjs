@@ -1,1 +1,3 @@
 page.replace_html('cart', :partial => 'cart', :object => @cart)
+page[:current_item].visual_effect :highlight, :start_color => '#88ff88', :end_color => '#114411'
+
