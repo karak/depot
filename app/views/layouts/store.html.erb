@@ -15,7 +15,7 @@
     </div>
     <div id="columns" >
       <div id="side">
-        <div id="cart">
+       <%= hidden_div_if @cart.items.empty?, :id => 'cart' %>
           <%= render :partial => 'cart', :object => @cart %>
         </div>
         <a>Home</a><br/>

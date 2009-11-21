@@ -1,3 +1,8 @@
 page.replace_html('cart', :partial => 'cart', :object => @cart)
-page[:current_item].visual_effect :highlight, :start_color => '#88ff88', :end_color => '#114411'
 
+page[:cart].visual_effect 'BlindDown' if @cart.total_items == 1
+# cause error! failed to camelize :blind_down symbol???
+#page[:cart].visual_effect :blind_down if @cart.total_items == 1
+
+
+page[:current_item].visual_effect :highlight, :start_color => '#88ff88', :end_color => '#114411'
