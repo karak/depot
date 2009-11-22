@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   validates_presence_of :title, :description, :image_url
   validates_uniqueness_of :title
   validates_numericality_of :price
-  validates_format_of :image_url, :with => /\.{gif|jpg|png}/i, :message => 'must be url of image GIF, JPG, or PNG'
+  validates_format_of :image_url, :with => /\.(gif|jpg|png)/i, :message => 'must be url of image GIF, JPG, or PNG'
 
   protected
   def validate
